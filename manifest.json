@@ -1,0 +1,20 @@
+{
+  "fast": {
+    "model_size": "base",
+    "archive": "voicetyper_fast_base.zip",
+    "approx_size_mb": 140,
+    "archive_size_mb": 127
+  },
+  "standard": {
+    "model_size": "small",
+    "archive": "voicetyper_standard_small.zip",
+    "approx_size_mb": 480,
+    "archive_size_mb": 426
+  },
+  "professional": {
+    "model_size": "medium",
+    "archive": "voicetyper_professional_medium.zip",
+    "approx_size_mb": 1500,
+    "archive_size_mb": 1348
+  }
+}
