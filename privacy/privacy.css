@@ -21,6 +21,18 @@
   :root{--bg:#15181c;--tile:#1c2026;--ink:#ecebe6;--sub:#a4a8ae;--faint:#8b9097;--rule:rgba(255,255,255,.12);
     --acc:#ff6b2a;--line:#ff6b2a;--wash:rgba(242,91,35,.12);--band:rgba(255,107,42,.16);--capacc:#b83a08;--veil:rgba(0,0,0,.55);color-scheme:dark}
 }
+html:lang(ja){--sans:"Inter","Yu Gothic UI","Yu Gothic","Meiryo","Hiragino Sans","Noto Sans JP",system-ui,sans-serif}
+html:lang(ko){--sans:"Inter","Malgun Gothic","Apple SD Gothic Neo","Noto Sans KR",system-ui,sans-serif;word-break:keep-all}
+/* Arabic: right to left, its own face (Inter keeps the Latin words); the letters join, so no letter-spacing */
+html:lang(ar){--sans:"Inter","Segoe UI","Noto Sans Arabic","SF Arabic","Geeza Pro",system-ui,sans-serif}
+/* Hindi: Devanagari hangs from its top line and needs more room between lines */
+html:lang(hi){--sans:"Inter","Nirmala UI","Noto Sans Devanagari","Kohinoor Devanagari",system-ui,sans-serif}
+html:lang(ar) h1,html:lang(hi) h1{letter-spacing:0}
+html:lang(ar) .kicker,html:lang(hi) .kicker,html:lang(ar) details.qa summary .tag,html:lang(hi) details.qa summary .tag{font-family:var(--sans);letter-spacing:0}
+html:lang(ar) .kicker,html:lang(hi) .kicker{font-size:.75rem}
+html:lang(hi) body{line-height:1.75}
+html:lang(hi) h1{line-height:1.45}
+html:lang(hi) h2{line-height:1.5}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;font-size:clamp(100%,68.75% + .390625vw,131.25%);scrollbar-gutter:stable;scroll-padding-bottom:5rem}
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
@@ -30,10 +42,11 @@ a{color:var(--acc);text-decoration:underline;text-underline-offset:3px;text-deco
 a:focus-visible,summary:focus-visible{outline:2px solid var(--line);outline-offset:3px;border-radius:4px}
 [tabindex="-1"]:focus{outline:none}
 .sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
-.skip{position:absolute;left:12px;top:-60px;z-index:40;padding:10px 14px;border-radius:10px;background:var(--ink);color:var(--bg);text-decoration:none}
+.skip{position:absolute;inset-inline-start:12px;top:-60px;z-index:40;padding:10px 14px;border-radius:10px;background:var(--ink);color:var(--bg);text-decoration:none}
 .skip:focus{top:12px}
 .sig{position:fixed;left:0;right:0;top:0;height:2px;background:var(--rule);z-index:30}
 .sig i{display:block;height:100%;background:var(--line);transform-origin:0 50%;transform:scaleX(0)}
+[dir="rtl"] .sig i{transform-origin:100% 50%}
 .ring{width:20px;height:20px;border-radius:10px;border:3px solid var(--line);display:inline-grid;place-items:center;flex:none}
 .ring::after{content:"";width:6px;height:6px;border-radius:3px;background:var(--line)}
 .kicker{display:block;font:400 .6875rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--sub)}
@@ -58,8 +71,9 @@ section>*{grid-column:2}
 section>.sn{grid-column:1;grid-row:1;align-self:baseline;font:400 .8125rem/1 var(--mono);color:var(--faint);transition:color .2s}
 h2{font:600 1.1875rem/1.3 var(--sans);margin:0 0 .5rem;text-wrap:balance}
 /* the section in view: its number orange and a tick over it on its rule */
-section::before{content:"";position:absolute;left:var(--air);top:-1px;width:1.25rem;height:2px;background:var(--line);
+section::before{content:"";position:absolute;inset-inline-start:var(--air);top:-1px;width:1.25rem;height:2px;background:var(--line);
   transform:scaleX(0);transform-origin:0 50%;transition:transform .24s}
+[dir="rtl"] section::before{transform-origin:100% 50%}
 section.now::before{transform:scaleX(1)}
 section.now>.sn{color:var(--acc)}
 /* reached from its link: a band from rule to rule, square, fading once (owner, 2026-11-13: «Полоса») */
@@ -67,7 +81,7 @@ section.jump::after{content:"";position:absolute;inset:0;background:var(--band);
 @keyframes band{0%,35%{opacity:1}100%{opacity:0}}
 details.qa summary{cursor:pointer;list-style:none;font-weight:500;display:flex;gap:.75rem;align-items:baseline}
 details.qa summary::-webkit-details-marker{display:none}
-details.qa summary .tag{margin-left:auto;font:400 .75rem var(--mono);color:var(--acc);flex:none;white-space:nowrap}
+details.qa summary .tag{margin-inline-start:auto;font:400 .75rem var(--mono);color:var(--acc);flex:none;white-space:nowrap}
 details.qa summary .less,details.qa[open] summary .more{display:none}
 details.qa[open] summary .less{display:inline}
 details.qa p{margin:.5rem 0 0;color:var(--sub);text-wrap:pretty}
@@ -76,8 +90,10 @@ details.qa p,.answer,.out li{hyphens:auto}
 .out{list-style:none;margin:0;padding:0}
 .out li{padding:.4rem 0;border-bottom:1px solid var(--rule)}
 .out li b{font-weight:500}
+/* each part keeps its own direction: «Report a problem» or «Hugging Face» never swallows the arrow on an Arabic page */
+.out li b,.out li .w{unicode-bidi:isolate}
 .out .rest{font-weight:600;font-size:1.0625rem;border-bottom:0;padding-top:.75rem}
-footer{margin-inline:calc(-1 * var(--air));padding:1.25rem var(--air) 0 calc(var(--air) + var(--num));border-top:1px solid var(--rule);font-size:.875rem;color:var(--sub)}
+footer{margin-inline:calc(-1 * var(--air));padding-block:1.25rem 0;padding-inline:calc(var(--air) + var(--num)) var(--air);border-top:1px solid var(--rule);font-size:.875rem;color:var(--sub)}
 footer p{margin:0}
 footer a{overflow-wrap:anywhere}
 time{font-variant-numeric:tabular-nums}
@@ -93,16 +109,16 @@ time{font-variant-numeric:tabular-nums}
 .capd>summary{list-style:none;cursor:pointer;display:flex;align-items:center;width:100%;min-height:44px;background:var(--ink);color:var(--bg);
   box-shadow:0 10px 24px rgba(0,0,0,.25);font-size:.875rem;font-weight:500;-webkit-tap-highlight-color:transparent}
 .capd>summary::-webkit-details-marker{display:none}
-.cap-sec>summary{gap:.625rem;padding:0 .875rem 0 1.125rem;border-radius:1.5rem 0 0 1.5rem;min-width:0}
-.cap-lang>summary{position:relative;min-width:4.75rem;justify-content:center;gap:.4375rem;padding:0 1rem 0 .875rem;border-radius:0 1.5rem 1.5rem 0;
+.cap-sec>summary{gap:.625rem;padding-block:0;padding-inline:1.125rem .875rem;border-start-start-radius:1.5rem;border-end-start-radius:1.5rem;min-width:0}
+.cap-lang>summary{position:relative;min-width:4.75rem;justify-content:center;gap:.4375rem;padding-block:0;padding-inline:.875rem 1rem;border-start-end-radius:1.5rem;border-end-end-radius:1.5rem;
   font:400 .8125rem var(--mono)}
-.cap-lang>summary::before{content:"";position:absolute;left:0;top:.75rem;bottom:.75rem;width:1px;background:currentColor;opacity:.3}
+.cap-lang>summary::before{content:"";position:absolute;inset-inline-start:0;top:.75rem;bottom:.75rem;width:1px;background:currentColor;opacity:.3}
 .capd>summary:active{filter:brightness(1.25)}
 @media (prefers-color-scheme:dark){.capd>summary{box-shadow:0 0 0 1px rgba(255,255,255,.14),0 10px 24px rgba(0,0,0,.5)}.capd>summary:active{filter:brightness(.92)}}
 .burger{width:.9rem;height:.65rem;border-top:1.5px solid currentColor;border-bottom:1.5px solid currentColor;position:relative;flex:none}
 .burger::after{content:"";position:absolute;left:0;right:0;top:50%;border-top:1.5px solid currentColor;transform:translateY(-50%)}
 .where{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.wn{font:400 .75rem var(--mono);color:var(--capacc);margin-right:.5rem}
+.wn{font:400 .75rem var(--mono);color:var(--capacc);margin-inline-end:.5rem}
 .cap .sheet{position:absolute;left:0;right:0;bottom:calc(100% + .5rem);max-height:min(70dvh,32rem);overflow:auto;overscroll-behavior:contain;
   border-radius:1.125rem;background:var(--bg);color:var(--ink);border:1px solid var(--rule);box-shadow:0 -12px 30px rgba(0,0,0,.2);padding:.625rem}
 .cap .sheet .kicker{display:flex;align-items:center;gap:.4rem;padding:.375rem .625rem .5rem}
@@ -113,14 +129,14 @@ time{font-variant-numeric:tabular-nums}
 .cap .sheet a.now .n{color:var(--acc)}
 .cap .langs{display:grid;grid-template-columns:1fr 1fr;gap:2px;list-style:none;margin:0;padding:0}
 .cap .langs a{align-items:center}
-.cap .langs a span{margin-left:auto;padding-left:.4rem;font:400 .6875rem var(--mono);color:var(--faint);white-space:nowrap}
+.cap .langs a span{margin-inline-start:auto;padding-inline-start:.4rem;font:400 .6875rem var(--mono);color:var(--faint);white-space:nowrap}
 @media (prefers-reduced-motion:no-preference){.cap details[open] .sheet,.lang[open] ul{animation:rise .18s cubic-bezier(.2,.8,.2,1)}}
 @keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 
 /* a narrow phone: «Подробнее ›» under the answer, so the answer keeps the whole line */
 @media (max-width:35.99rem){
   details.qa summary{flex-wrap:wrap;row-gap:.25rem}
-  details.qa summary .tag{margin-left:0;flex-basis:100%}
+  details.qa summary .tag{margin-inline-start:0;flex-basis:100%}
 }
 /* a phone and a tablet: the text fades out under the capsule instead of ending in a cut line */
 @media (max-width:55.99rem){
@@ -141,16 +157,16 @@ time{font-variant-numeric:tabular-nums}
   .cap{display:none}
   .layout{display:grid;grid-template-columns:var(--toc) minmax(0,calc(3.5rem + var(--measure) + .75rem));justify-content:center;padding-inline:1.5rem}
   .toc{display:flex;flex-direction:column;position:sticky;top:2px;align-self:start;max-height:calc(100dvh - 2px);z-index:5;
-    padding:1.75rem 1.25rem 1.25rem 0}
-  main{padding:3rem .75rem 4.5rem 3.5rem;border-left:1px solid var(--rule);min-width:0}
+    padding-block:1.75rem 1.25rem;padding-inline:0 1.25rem}
+  main{padding-block:3rem 4.5rem;padding-inline:3.5rem .75rem;border-inline-start:1px solid var(--rule);min-width:0}
   h1{font-size:2.125rem;line-height:1.18;margin-bottom:1.25rem}
   .first{margin-bottom:2.25rem}
   h2{font-size:1.3125rem}
   section{margin-inline:-3.5rem -.75rem;padding:1.375rem .75rem 1.25rem}
-  section::before{left:.75rem;width:1.5rem}
-  footer{margin-inline:-3.5rem -.75rem;padding:1.25rem .75rem 0 3.5rem}
+  section::before{inset-inline-start:.75rem;width:1.5rem}
+  footer{margin-inline:-3.5rem -.75rem;padding-block:1.25rem 0;padding-inline:3.5rem .75rem}
 }
-.brand{display:flex;align-items:center;gap:.6rem;margin:0 0 1.1rem .625rem;font-weight:600}
+.brand{display:flex;align-items:center;gap:.6rem;margin:0 0 1.1rem;margin-inline-start:.625rem;font-weight:600}
 .toc .kicker{padding:0 .625rem .5rem}
 /* the list scrolls inside itself when it is taller than the screen; soft shades say there is more */
 .toc nav{display:flex;flex-direction:column;gap:2px;min-height:0;flex:0 1 auto;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;
@@ -160,15 +176,15 @@ time{font-variant-numeric:tabular-nums}
     radial-gradient(farthest-side at 50% 0,rgba(0,0,0,.12),transparent) top/100% .5rem no-repeat scroll,
     radial-gradient(farthest-side at 50% 100%,rgba(0,0,0,.12),transparent) bottom/100% .5rem no-repeat scroll}
 .toc nav a{display:flex;gap:.625rem;align-items:baseline;padding:.375rem .625rem;border-radius:8px;font-size:.875rem;line-height:1.35;
-  color:var(--sub);text-decoration:none;border-left:2px solid transparent}
+  color:var(--sub);text-decoration:none;border-inline-start:2px solid transparent}
 .toc nav a .n{flex:none;min-width:1.25rem;font:400 .6875rem var(--mono);color:var(--faint)}
-.toc nav a.now{color:var(--ink);border-left-color:var(--line);border-radius:0 8px 8px 0;background:var(--wash)}
+.toc nav a.now{color:var(--ink);border-inline-start-color:var(--line);border-start-start-radius:0;border-end-start-radius:0;background:var(--wash)}
 .toc nav a.now .n{color:var(--acc)}
 .toc nav a:focus-visible{outline-offset:-2px}
 @media (hover:hover){.toc nav a:hover{background:var(--tile);color:var(--ink)}}
 /* a short laptop screen (1366x768): the list a little tighter */
 @media (min-width:56rem) and (max-height:47.5rem){
-  .toc{padding:1rem 1rem .75rem 0}
+  .toc{padding-block:1rem .75rem;padding-inline:0 1rem}
   .brand{margin-bottom:.5rem}
   .toc nav{gap:0}
   .toc nav a{padding:.25rem .625rem;line-height:1.3}
@@ -183,13 +199,13 @@ time{font-variant-numeric:tabular-nums}
 .lang[open] summary{border-color:var(--line)}
 .lang[open] .chev{transform:translateY(2px) rotate(-135deg)}
 @media (hover:hover){.lang summary:hover{background:var(--tile)}}
-.lang ul{list-style:none;margin:0;padding:6px;position:absolute;left:0;bottom:calc(100% + .5rem);width:26rem;max-height:calc(100dvh - 6rem);overflow:auto;
+.lang ul{list-style:none;margin:0;padding:6px;position:absolute;inset-inline-start:0;bottom:calc(100% + .5rem);width:26rem;max-height:calc(100dvh - 6rem);overflow:auto;
   border-radius:16px;background:var(--bg);border:1px solid var(--rule);box-shadow:0 24px 48px rgba(0,0,0,.18),0 2px 6px rgba(0,0,0,.06);
   display:grid;grid-template-columns:1fr 1fr;gap:2px;z-index:30}
 .lang li a{display:flex;justify-content:space-between;align-items:center;min-height:2.1rem;padding:0 .625rem;border-radius:8px;font-size:.84rem;
   color:var(--ink);text-decoration:none}
 @media (hover:hover){.lang li a:hover{background:var(--tile)}}
-.lang li a span{font:400 .66rem var(--mono);color:var(--faint);white-space:nowrap;margin-left:.5rem}
+.lang li a span{font:400 .66rem var(--mono);color:var(--faint);white-space:nowrap;margin-inline-start:.5rem}
 .lang li a:focus-visible{outline-offset:-2px}
 .lang li a[aria-current]{background:var(--wash)}
 
@@ -206,7 +222,7 @@ time{font-variant-numeric:tabular-nums}
   main{padding:0;border:0;max-width:none}
   section{margin-inline:0;padding-inline:0;break-inside:avoid}
   section::before,section::after{display:none}
-  footer{margin-inline:0;padding-left:0}
+  footer{margin-inline:0;padding-inline-start:0}
   a::after{content:" (" attr(href) ")";font-size:.85em;color:#444}
   details.qa p{color:#222}
 }

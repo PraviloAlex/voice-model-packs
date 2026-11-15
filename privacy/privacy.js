@@ -164,5 +164,6 @@
   go.href = wanted + "/";
   go.textContent = link.getAttribute("data-offer");
   go.setAttribute("lang", wanted);
+  go.setAttribute("dir", "auto");  // Arabic reads right to left, its arrow pointing left
   offer.hidden = false;
 })();
