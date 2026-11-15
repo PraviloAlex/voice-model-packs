@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kukuluku Voice - Privacy</title>
+<style>
+  :root { --ink: #1d1d1f; --muted: #6e6e73; --line: #e5e5ea; --accent: #f25b23; --bg: #ffffff; }
+  @media (prefers-color-scheme: dark) { :root { --ink: #f2f2f2; --muted: #a1a1a6; --line: #2c2c2e; --bg: #111111; } }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 -apple-system, "Segoe UI", system-ui, sans-serif; }
+  main { max-width: 720px; margin: 0 auto; padding: 48px 20px 64px; }
+  h1 { font-size: 28px; margin: 0 0 4px; }
+  h2 { font-size: 20px; margin: 40px 0 8px; padding-top: 24px; border-top: 1px solid var(--line); }
+  h3 { font-size: 16px; margin: 24px 0 4px; }
+  p, li { color: var(--ink); }
+  .muted { color: var(--muted); }
+  .mark { display: inline-block; width: 12px; height: 12px; border: 3px solid var(--accent); border-radius: 50%; margin-right: 8px; vertical-align: -1px; }
+  a { color: var(--accent); }
+  nav a { margin-right: 16px; }
+</style>
+</head>
+<body>
+<main>
+  <h1><span class="mark"></span>Kukuluku Voice</h1>
+  <p class="muted">Privacy policy · Политика конфиденциальности · 1 November 2026</p>
+  <nav><a href="#en">English</a><a href="#ru">Русский</a></nav>
+
+  <h2 id="en">In short</h2>
+  <p>Kukuluku Voice turns your speech into text on your own computer. Your voice and your text are not sent anywhere. There is no account, no analytics, no advertising and no telemetry.</p>
+
+  <h3>Microphone</h3>
+  <p>The app listens only during a dictation: from the dictation key until you release or stop it. The sound is recognised on your computer by a speech model stored on it; a temporary sound file may exist for a moment and is deleted after recognition. Recordings are not kept.</p>
+
+  <h3>Text</h3>
+  <p>The recognised text is typed where your cursor is. To paste it, the app may use the clipboard for a moment and then puts back what was there. History keeps your last dictations only while the app runs, unless you turn on saving it; then it stays in a file on your computer.</p>
+
+  <h3>Optional features, all on your computer</h3>
+  <ul>
+    <li><b>Learning your corrections</b> (off by default): after a dictation the app reads the text field it typed into to notice the words you fix, and remembers them on your computer.</li>
+    <li><b>Your phone</b>: when you link a phone with a QR code, files and text travel directly between your computer and your phone over your home Wi-Fi, not through the internet.</li>
+    <li><b>Report a problem</b>: collects the app's logs (they never contain what you dictated) into an archive and opens an email; nothing is sent unless you send that email yourself.</li>
+  </ul>
+
+  <h3>When the app goes online</h3>
+  <ul>
+    <li>To download a speech or translation model you choose, from the app's model release on GitHub (<a href="https://github.com/PraviloAlex/voice-model-packs">github.com/PraviloAlex/voice-model-packs</a>). Each file is checked against its SHA-256 before it is used. Only the file is requested; nothing about you or your dictations is sent.</li>
+    <li>Updates of the Microsoft Store version come from the Microsoft Store.</li>
+  </ul>
+
+  <h3>Children</h3>
+  <p>The app collects no personal data from anyone, children included.</p>
+
+  <h3>Contact</h3>
+  <p>Questions: <a href="mailto:kukuluku.app@gmail.com">kukuluku.app@gmail.com</a></p>
+
+  <h2 id="ru">Коротко</h2>
+  <p>Kukuluku Voice превращает речь в текст на твоём компьютере. Голос и текст никуда не отправляются. Нет аккаунта, аналитики, рекламы и телеметрии.</p>
+
+  <h3>Микрофон</h3>
+  <p>Программа слушает только во время диктовки: с нажатия клавиши, пока ты её не отпустишь или не остановишь. Звук распознаётся на компьютере моделью, которая на нём же и лежит; временный звуковой файл может появиться на мгновение и удаляется после распознавания. Записи не хранятся.</p>
+
+  <h3>Текст</h3>
+  <p>Распознанный текст вставляется туда, где стоит курсор. Чтобы его вставить, программа может на мгновение занять буфер обмена и потом возвращает в него то, что там было. История хранит последние диктовки, только пока программа запущена, если ты не включишь сохранение; тогда они лежат в файле на твоём компьютере.</p>
+
+  <h3>Дополнительно, всё на твоём компьютере</h3>
+  <ul>
+    <li><b>Запоминать исправления</b> (выключено по умолчанию): после диктовки программа читает поле, куда вставила текст, замечает исправленные слова и запоминает их у тебя на компьютере.</li>
+    <li><b>Телефон</b>: после связи по QR-коду файлы и текст идут напрямую между компьютером и телефоном по твоему домашнему Wi-Fi, не через интернет.</li>
+    <li><b>Сообщить о проблеме</b>: собирает журналы программы (в них никогда нет того, что ты диктовал) в архив и открывает письмо; ничего не уходит, пока ты сам его не отправишь.</li>
+  </ul>
+
+  <h3>Когда программа выходит в интернет</h3>
+  <ul>
+    <li>Чтобы скачать выбранную тобой модель речи или перевода из релиза моделей программы на GitHub (<a href="https://github.com/PraviloAlex/voice-model-packs">github.com/PraviloAlex/voice-model-packs</a>). Каждый файл сверяется по SHA-256, прежде чем им пользоваться. Запрашивается только файл; ничего о тебе и твоих диктовках не отправляется.</li>
+    <li>Версию из Microsoft Store обновляет Microsoft Store.</li>
+  </ul>
+
+  <h3>Дети</h3>
+  <p>Программа не собирает личных данных ни у кого, в том числе у детей.</p>
+
+  <h3>Связь</h3>
+  <p>Вопросы: <a href="mailto:kukuluku.app@gmail.com">kukuluku.app@gmail.com</a></p>
+</main>
+</body>
+</html>

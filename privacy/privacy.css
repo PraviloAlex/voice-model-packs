@@ -1,0 +1,212 @@
+/* Kukuluku Voice - the privacy page, variant В+ «Номера» (owner, 2026-11-13; mockup 61, frames 400-402).
+   One block - the sections beside the text - on a laptop and a monitor, one column and a bottom capsule on a phone.
+   The type grows with the screen (16 px up to 1280, about 18.5 at 1920, 21 at 2560), so a wide monitor
+   is not a small island of text, and a line stays near 70 letters (the team's layout spec, 2026-11-13).
+   Nothing from other servers: the faces lie beside this file. Light and dark follow the system. */
+@font-face{font-family:"Inter";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/inter-400.woff2") format("woff2")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:500;font-display:swap;src:url("fonts/inter-500.woff2") format("woff2")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:600;font-display:swap;src:url("fonts/inter-600.woff2") format("woff2")}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/jetbrains-mono-400.woff2") format("woff2")}
+
+:root{
+  --bg:#fffefb;--tile:#efece5;--ink:#15181c;--sub:#5d6168;--faint:#767a81;--rule:rgba(21,24,28,.10);
+  --acc:#c9420c;--line:#f25b23;--wash:rgba(242,91,35,.09);--band:rgba(242,91,35,.14);--capacc:#ff7a45;--veil:rgba(0,0,0,.38);
+  --sans:"Inter","Segoe UI Variable","Segoe UI",system-ui,-apple-system,"Microsoft YaHei UI","PingFang SC",sans-serif;
+  --mono:"JetBrains Mono","Cascadia Mono",Consolas,ui-monospace,monospace;
+  /* the grid: the sections' column, the number gutter, the air beyond the text, the line of text */
+  --toc:15rem;--num:1.75rem;--air:.75rem;--measure:35rem;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#15181c;--tile:#1c2026;--ink:#ecebe6;--sub:#a4a8ae;--faint:#8b9097;--rule:rgba(255,255,255,.12);
+    --acc:#ff6b2a;--line:#ff6b2a;--wash:rgba(242,91,35,.12);--band:rgba(255,107,42,.16);--capacc:#b83a08;--veil:rgba(0,0,0,.55);color-scheme:dark}
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;font-size:clamp(100%,68.75% + .390625vw,131.25%);scrollbar-gutter:stable;scroll-padding-bottom:5rem}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.6 var(--sans);-webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;font-synthesis:none}
+a{color:var(--acc);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--line);outline-offset:3px;border-radius:4px}
+[tabindex="-1"]:focus{outline:none}
+.sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip{position:absolute;left:12px;top:-60px;z-index:40;padding:10px 14px;border-radius:10px;background:var(--ink);color:var(--bg);text-decoration:none}
+.skip:focus{top:12px}
+.sig{position:fixed;left:0;right:0;top:0;height:2px;background:var(--rule);z-index:30}
+.sig i{display:block;height:100%;background:var(--line);transform-origin:0 50%;transform:scaleX(0)}
+.ring{width:20px;height:20px;border-radius:10px;border:3px solid var(--line);display:inline-grid;place-items:center;flex:none}
+.ring::after{content:"";width:6px;height:6px;border-radius:3px;background:var(--line)}
+.kicker{display:block;font:400 .6875rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--sub)}
+.globe{width:1rem;height:1rem;flex:none;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;opacity:.8}
+.chev{width:.45rem;height:.45rem;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:translateY(-2px) rotate(45deg);
+  opacity:.65;flex:none;transition:transform .16s}
+.print-only{display:none}
+
+/* ---- the phone first: one column ---- */
+.toc{display:none}
+main{display:block;padding:1.75rem max(1.25rem,env(safe-area-inset-right)) calc(5.5rem + env(safe-area-inset-bottom)) max(1.25rem,env(safe-area-inset-left))}
+.notice{margin:0 0 1.25rem;padding:.75rem 1rem;border-radius:12px;background:var(--wash);font-size:.9rem}
+[data-sec]{position:relative;scroll-margin-top:1rem}
+.first{margin-bottom:2rem}
+h1{font:600 clamp(1.5rem,1.1rem + 1.8vw,1.75rem)/1.22 var(--sans);letter-spacing:-.02em;margin:0 0 1.25rem;text-wrap:balance}
+.pills{list-style:none;margin:0;padding:0;display:flex;gap:6px;flex-wrap:wrap}
+.pills li{min-height:1.9rem;padding:0 .75rem;border-radius:999px;background:var(--tile);display:inline-flex;align-items:center;font-size:.8125rem}
+/* a section: its number in the gutter, a rule above it from edge to edge, the text in one column */
+section{display:grid;grid-template-columns:var(--num) minmax(0,1fr);isolation:isolate;margin-inline:calc(-1 * var(--air));
+  padding:1.25rem var(--air) 1.125rem;border-top:1px solid var(--rule)}
+section>*{grid-column:2}
+section>.sn{grid-column:1;grid-row:1;align-self:baseline;font:400 .8125rem/1 var(--mono);color:var(--faint);transition:color .2s}
+h2{font:600 1.1875rem/1.3 var(--sans);margin:0 0 .5rem;text-wrap:balance}
+/* the section in view: its number orange and a tick over it on its rule */
+section::before{content:"";position:absolute;left:var(--air);top:-1px;width:1.25rem;height:2px;background:var(--line);
+  transform:scaleX(0);transform-origin:0 50%;transition:transform .24s}
+section.now::before{transform:scaleX(1)}
+section.now>.sn{color:var(--acc)}
+/* reached from its link: a band from rule to rule, square, fading once (owner, 2026-11-13: «Полоса») */
+section.jump::after{content:"";position:absolute;inset:0;background:var(--band);z-index:-1;pointer-events:none;animation:band 1.6s ease-out forwards}
+@keyframes band{0%,35%{opacity:1}100%{opacity:0}}
+details.qa summary{cursor:pointer;list-style:none;font-weight:500;display:flex;gap:.75rem;align-items:baseline}
+details.qa summary::-webkit-details-marker{display:none}
+details.qa summary .tag{margin-left:auto;font:400 .75rem var(--mono);color:var(--acc);flex:none;white-space:nowrap}
+details.qa summary .less,details.qa[open] summary .more{display:none}
+details.qa[open] summary .less{display:inline}
+details.qa p{margin:.5rem 0 0;color:var(--sub);text-wrap:pretty}
+details.qa p,.answer,.out li{hyphens:auto}
+.answer{font-weight:500;margin:0}
+.out{list-style:none;margin:0;padding:0}
+.out li{padding:.4rem 0;border-bottom:1px solid var(--rule)}
+.out li b{font-weight:500}
+.out .rest{font-weight:600;font-size:1.0625rem;border-bottom:0;padding-top:.75rem}
+footer{margin-inline:calc(-1 * var(--air));padding:1.25rem var(--air) 0 calc(var(--air) + var(--num));border-top:1px solid var(--rule);font-size:.875rem;color:var(--sub)}
+footer p{margin:0}
+footer a{overflow-wrap:anywhere}
+time{font-variant-numeric:tabular-nums}
+
+/* the phone's capsule: the sections on the left, the language on the right; plain <details>, so both work
+   without the script; the browser keeps one open by «name» */
+.cap{position:fixed;left:1rem;right:1rem;bottom:calc(.75rem + env(safe-area-inset-bottom));max-width:26rem;margin-inline:auto;
+  height:3rem;display:flex;z-index:20}
+.cap::before{content:"";position:fixed;inset:0;background:var(--veil);z-index:-1;opacity:0;pointer-events:none;transition:opacity .18s}
+.cap:has(details[open])::before{opacity:1}
+.capd{display:flex;min-width:0}
+.cap-sec{flex:1}
+.capd>summary{list-style:none;cursor:pointer;display:flex;align-items:center;width:100%;min-height:44px;background:var(--ink);color:var(--bg);
+  box-shadow:0 10px 24px rgba(0,0,0,.25);font-size:.875rem;font-weight:500;-webkit-tap-highlight-color:transparent}
+.capd>summary::-webkit-details-marker{display:none}
+.cap-sec>summary{gap:.625rem;padding:0 .875rem 0 1.125rem;border-radius:1.5rem 0 0 1.5rem;min-width:0}
+.cap-lang>summary{position:relative;min-width:4.75rem;justify-content:center;gap:.4375rem;padding:0 1rem 0 .875rem;border-radius:0 1.5rem 1.5rem 0;
+  font:400 .8125rem var(--mono)}
+.cap-lang>summary::before{content:"";position:absolute;left:0;top:.75rem;bottom:.75rem;width:1px;background:currentColor;opacity:.3}
+.capd>summary:active{filter:brightness(1.25)}
+@media (prefers-color-scheme:dark){.capd>summary{box-shadow:0 0 0 1px rgba(255,255,255,.14),0 10px 24px rgba(0,0,0,.5)}.capd>summary:active{filter:brightness(.92)}}
+.burger{width:.9rem;height:.65rem;border-top:1.5px solid currentColor;border-bottom:1.5px solid currentColor;position:relative;flex:none}
+.burger::after{content:"";position:absolute;left:0;right:0;top:50%;border-top:1.5px solid currentColor;transform:translateY(-50%)}
+.where{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.wn{font:400 .75rem var(--mono);color:var(--capacc);margin-right:.5rem}
+.cap .sheet{position:absolute;left:0;right:0;bottom:calc(100% + .5rem);max-height:min(70dvh,32rem);overflow:auto;overscroll-behavior:contain;
+  border-radius:1.125rem;background:var(--bg);color:var(--ink);border:1px solid var(--rule);box-shadow:0 -12px 30px rgba(0,0,0,.2);padding:.625rem}
+.cap .sheet .kicker{display:flex;align-items:center;gap:.4rem;padding:.375rem .625rem .5rem}
+.cap .sheet a{display:flex;gap:.625rem;align-items:baseline;min-height:2.75rem;padding:.625rem;border-radius:.5rem;color:var(--ink);
+  text-decoration:none;font-size:.9375rem;line-height:1.35}
+.cap .sheet a .n{flex:none;min-width:1.75rem;font:400 .75rem var(--mono);color:var(--faint)}
+.cap .sheet a.now,.cap .sheet a[aria-current]{background:var(--wash)}
+.cap .sheet a.now .n{color:var(--acc)}
+.cap .langs{display:grid;grid-template-columns:1fr 1fr;gap:2px;list-style:none;margin:0;padding:0}
+.cap .langs a{align-items:center}
+.cap .langs a span{margin-left:auto;padding-left:.4rem;font:400 .6875rem var(--mono);color:var(--faint);white-space:nowrap}
+@media (prefers-reduced-motion:no-preference){.cap details[open] .sheet,.lang[open] ul{animation:rise .18s cubic-bezier(.2,.8,.2,1)}}
+@keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* a narrow phone: «Подробнее ›» under the answer, so the answer keeps the whole line */
+@media (max-width:35.99rem){
+  details.qa summary{flex-wrap:wrap;row-gap:.25rem}
+  details.qa summary .tag{margin-left:0;flex-basis:100%}
+}
+/* a phone and a tablet: the text fades out under the capsule instead of ending in a cut line */
+@media (max-width:55.99rem){
+  body::after{content:"";position:fixed;left:0;right:0;bottom:0;height:calc(5.25rem + env(safe-area-inset-bottom));
+    background:linear-gradient(to bottom,transparent,var(--bg) 60%);pointer-events:none;z-index:15}
+}
+@media print{body::after{display:none}}
+
+/* ---- a tablet: the same column, centred ---- */
+@media (min-width:36rem) and (max-width:55.99rem){
+  main{max-width:calc(var(--num) + var(--measure) + 5rem);margin-inline:auto;padding-inline:2.5rem}
+}
+
+/* ---- a laptop and a monitor: the sections beside the text, one block in the middle ---- */
+@media (min-width:56rem){
+  :root{--num:2.75rem}
+  body{line-height:1.65}
+  .cap{display:none}
+  .layout{display:grid;grid-template-columns:var(--toc) minmax(0,calc(3.5rem + var(--measure) + .75rem));justify-content:center;padding-inline:1.5rem}
+  .toc{display:flex;flex-direction:column;position:sticky;top:2px;align-self:start;max-height:calc(100dvh - 2px);z-index:5;
+    padding:1.75rem 1.25rem 1.25rem 0}
+  main{padding:3rem .75rem 4.5rem 3.5rem;border-left:1px solid var(--rule);min-width:0}
+  h1{font-size:2.125rem;line-height:1.18;margin-bottom:1.25rem}
+  .first{margin-bottom:2.25rem}
+  h2{font-size:1.3125rem}
+  section{margin-inline:-3.5rem -.75rem;padding:1.375rem .75rem 1.25rem}
+  section::before{left:.75rem;width:1.5rem}
+  footer{margin-inline:-3.5rem -.75rem;padding:1.25rem .75rem 0 3.5rem}
+}
+.brand{display:flex;align-items:center;gap:.6rem;margin:0 0 1.1rem .625rem;font-weight:600}
+.toc .kicker{padding:0 .625rem .5rem}
+/* the list scrolls inside itself when it is taller than the screen; soft shades say there is more */
+.toc nav{display:flex;flex-direction:column;gap:2px;min-height:0;flex:0 1 auto;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;
+  margin:0 -.5rem;padding:0 .5rem;
+  background:linear-gradient(var(--bg) 30%,transparent) top/100% 1.5rem no-repeat local,
+    linear-gradient(transparent,var(--bg) 70%) bottom/100% 1.5rem no-repeat local,
+    radial-gradient(farthest-side at 50% 0,rgba(0,0,0,.12),transparent) top/100% .5rem no-repeat scroll,
+    radial-gradient(farthest-side at 50% 100%,rgba(0,0,0,.12),transparent) bottom/100% .5rem no-repeat scroll}
+.toc nav a{display:flex;gap:.625rem;align-items:baseline;padding:.375rem .625rem;border-radius:8px;font-size:.875rem;line-height:1.35;
+  color:var(--sub);text-decoration:none;border-left:2px solid transparent}
+.toc nav a .n{flex:none;min-width:1.25rem;font:400 .6875rem var(--mono);color:var(--faint)}
+.toc nav a.now{color:var(--ink);border-left-color:var(--line);border-radius:0 8px 8px 0;background:var(--wash)}
+.toc nav a.now .n{color:var(--acc)}
+.toc nav a:focus-visible{outline-offset:-2px}
+@media (hover:hover){.toc nav a:hover{background:var(--tile);color:var(--ink)}}
+/* a short laptop screen (1366x768): the list a little tighter */
+@media (min-width:56rem) and (max-height:47.5rem){
+  .toc{padding:1rem 1rem .75rem 0}
+  .brand{margin-bottom:.5rem}
+  .toc nav{gap:0}
+  .toc nav a{padding:.25rem .625rem;line-height:1.3}
+}
+/* the language choice beside the text: right after the list; a plain list of links, opened without a script */
+.langbox{margin-top:1.5rem;flex:none}
+.lang{position:relative}
+.lang summary{list-style:none;cursor:pointer;min-height:2.4rem;border-radius:10px;border:1px solid var(--rule);display:flex;align-items:center;
+  gap:.55rem;padding:0 .75rem;font-size:.84rem}
+.lang summary .ln{flex:1}
+.lang summary::-webkit-details-marker{display:none}
+.lang[open] summary{border-color:var(--line)}
+.lang[open] .chev{transform:translateY(2px) rotate(-135deg)}
+@media (hover:hover){.lang summary:hover{background:var(--tile)}}
+.lang ul{list-style:none;margin:0;padding:6px;position:absolute;left:0;bottom:calc(100% + .5rem);width:26rem;max-height:calc(100dvh - 6rem);overflow:auto;
+  border-radius:16px;background:var(--bg);border:1px solid var(--rule);box-shadow:0 24px 48px rgba(0,0,0,.18),0 2px 6px rgba(0,0,0,.06);
+  display:grid;grid-template-columns:1fr 1fr;gap:2px;z-index:30}
+.lang li a{display:flex;justify-content:space-between;align-items:center;min-height:2.1rem;padding:0 .625rem;border-radius:8px;font-size:.84rem;
+  color:var(--ink);text-decoration:none}
+@media (hover:hover){.lang li a:hover{background:var(--tile)}}
+.lang li a span{font:400 .66rem var(--mono);color:var(--faint);white-space:nowrap;margin-left:.5rem}
+.lang li a:focus-visible{outline-offset:-2px}
+.lang li a[aria-current]{background:var(--wash)}
+
+@media (prefers-reduced-motion:reduce){
+  section.jump::after{animation:none}
+  section::before,.cap::before,.chev{transition:none}
+}
+@media print{
+  .sig,.toc,.cap,.skip,details.qa summary .tag{display:none!important}
+  .print-only{display:block}
+  .layout{display:block}
+  html{font-size:100%}
+  body{background:#fff;color:#000;font-size:11pt}
+  main{padding:0;border:0;max-width:none}
+  section{margin-inline:0;padding-inline:0;break-inside:avoid}
+  section::before,section::after{display:none}
+  footer{margin-inline:0;padding-left:0}
+  a::after{content:" (" attr(href) ")";font-size:.85em;color:#444}
+  details.qa p{color:#222}
+}

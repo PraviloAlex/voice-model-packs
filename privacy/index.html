@@ -1,85 +1,75 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-root="1">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kukuluku Voice - Privacy</title>
-<style>
-  :root { --ink: #1d1d1f; --muted: #6e6e73; --line: #e5e5ea; --accent: #f25b23; --bg: #ffffff; }
-  @media (prefers-color-scheme: dark) { :root { --ink: #f2f2f2; --muted: #a1a1a6; --line: #2c2c2e; --bg: #111111; } }
-  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 -apple-system, "Segoe UI", system-ui, sans-serif; }
-  main { max-width: 720px; margin: 0 auto; padding: 48px 20px 64px; }
-  h1 { font-size: 28px; margin: 0 0 4px; }
-  h2 { font-size: 20px; margin: 40px 0 8px; padding-top: 24px; border-top: 1px solid var(--line); }
-  h3 { font-size: 16px; margin: 24px 0 4px; }
-  p, li { color: var(--ink); }
-  .muted { color: var(--muted); }
-  .mark { display: inline-block; width: 12px; height: 12px; border: 3px solid var(--accent); border-radius: 50%; margin-right: 8px; vertical-align: -1px; }
-  a { color: var(--accent); }
-  nav a { margin-right: 16px; }
-</style>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; script-src 'self'; font-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Kukuluku Voice · Privacy</title>
+<meta name="description" content="Kukuluku Voice works without the internet: speech is recognized and translated right on your computer.">
+<link rel="canonical" href="https://praviloalex.github.io/voice-model-packs/privacy/">
+<link rel="alternate" hreflang="ru" href="https://praviloalex.github.io/voice-model-packs/privacy/ru/">
+<link rel="alternate" hreflang="en" href="https://praviloalex.github.io/voice-model-packs/privacy/en/">
+<link rel="alternate" hreflang="es" href="https://praviloalex.github.io/voice-model-packs/privacy/es/">
+<link rel="alternate" hreflang="es-AR" href="https://praviloalex.github.io/voice-model-packs/privacy/es-ar/">
+<link rel="alternate" hreflang="x-default" href="https://praviloalex.github.io/voice-model-packs/privacy/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='%23f25b23' stroke-width='5'/%3E%3Ccircle cx='16' cy='16' r='4' fill='%23f25b23'/%3E%3C/svg%3E">
+<link rel="preload" href="fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="privacy.css">
+<script src="privacy.js" defer></script>
 </head>
 <body>
-<main>
-  <h1><span class="mark"></span>Kukuluku Voice</h1>
-  <p class="muted">Privacy policy · Политика конфиденциальности · 1 November 2026</p>
-  <nav><a href="#en">English</a><a href="#ru">Русский</a></nav>
-
-  <h2 id="en">In short</h2>
-  <p>Kukuluku Voice turns your speech into text on your own computer. Your voice and your text are not sent anywhere. There is no account, no analytics, no advertising and no telemetry.</p>
-
-  <h3>Microphone</h3>
-  <p>The app listens only during a dictation: from the dictation key until you release or stop it. The sound is recognised on your computer by a speech model stored on it; a temporary sound file may exist for a moment and is deleted after recognition. Recordings are not kept.</p>
-
-  <h3>Text</h3>
-  <p>The recognised text is typed where your cursor is. To paste it, the app may use the clipboard for a moment and then puts back what was there. History keeps your last dictations only while the app runs, unless you turn on saving it; then it stays in a file on your computer.</p>
-
-  <h3>Optional features, all on your computer</h3>
-  <ul>
-    <li><b>Learning your corrections</b> (off by default): after a dictation the app reads the text field it typed into to notice the words you fix, and remembers them on your computer.</li>
-    <li><b>Your phone</b>: when you link a phone with a QR code, files and text travel directly between your computer and your phone over your home Wi-Fi, not through the internet.</li>
-    <li><b>Report a problem</b>: collects the app's logs (they never contain what you dictated) into an archive and opens an email; nothing is sent unless you send that email yourself.</li>
-  </ul>
-
-  <h3>When the app goes online</h3>
-  <ul>
-    <li>To download a speech or translation model you choose, from the app's model release on GitHub (<a href="https://github.com/PraviloAlex/voice-model-packs">github.com/PraviloAlex/voice-model-packs</a>). Each file is checked against its SHA-256 before it is used. Only the file is requested; nothing about you or your dictations is sent.</li>
-    <li>Updates of the Microsoft Store version come from the Microsoft Store.</li>
-  </ul>
-
-  <h3>Children</h3>
-  <p>The app collects no personal data from anyone, children included.</p>
-
-  <h3>Contact</h3>
-  <p>Questions: <a href="mailto:kukuluku.app@gmail.com">kukuluku.app@gmail.com</a></p>
-
-  <h2 id="ru">Коротко</h2>
-  <p>Kukuluku Voice превращает речь в текст на твоём компьютере. Голос и текст никуда не отправляются. Нет аккаунта, аналитики, рекламы и телеметрии.</p>
-
-  <h3>Микрофон</h3>
-  <p>Программа слушает только во время диктовки: с нажатия клавиши, пока ты её не отпустишь или не остановишь. Звук распознаётся на компьютере моделью, которая на нём же и лежит; временный звуковой файл может появиться на мгновение и удаляется после распознавания. Записи не хранятся.</p>
-
-  <h3>Текст</h3>
-  <p>Распознанный текст вставляется туда, где стоит курсор. Чтобы его вставить, программа может на мгновение занять буфер обмена и потом возвращает в него то, что там было. История хранит последние диктовки, только пока программа запущена, если ты не включишь сохранение; тогда они лежат в файле на твоём компьютере.</p>
-
-  <h3>Дополнительно, всё на твоём компьютере</h3>
-  <ul>
-    <li><b>Запоминать исправления</b> (выключено по умолчанию): после диктовки программа читает поле, куда вставила текст, замечает исправленные слова и запоминает их у тебя на компьютере.</li>
-    <li><b>Телефон</b>: после связи по QR-коду файлы и текст идут напрямую между компьютером и телефоном по твоему домашнему Wi-Fi, не через интернет.</li>
-    <li><b>Сообщить о проблеме</b>: собирает журналы программы (в них никогда нет того, что ты диктовал) в архив и открывает письмо; ничего не уходит, пока ты сам его не отправишь.</li>
-  </ul>
-
-  <h3>Когда программа выходит в интернет</h3>
-  <ul>
-    <li>Чтобы скачать выбранную тобой модель речи или перевода из релиза моделей программы на GitHub (<a href="https://github.com/PraviloAlex/voice-model-packs">github.com/PraviloAlex/voice-model-packs</a>). Каждый файл сверяется по SHA-256, прежде чем им пользоваться. Запрашивается только файл; ничего о тебе и твоих диктовках не отправляется.</li>
-    <li>Версию из Microsoft Store обновляет Microsoft Store.</li>
-  </ul>
-
-  <h3>Дети</h3>
-  <p>Программа не собирает личных данных ни у кого, в том числе у детей.</p>
-
-  <h3>Связь</h3>
-  <p>Вопросы: <a href="mailto:kukuluku.app@gmail.com">kukuluku.app@gmail.com</a></p>
+<a class="skip" href="#content">Skip to the text</a>
+<div class="sig" aria-hidden="true"><i></i></div>
+<div class="layout">
+<aside class="toc" aria-label="Sections">
+<div class="brand"><span class="ring" aria-hidden="true"></span>Kukuluku Voice</div>
+<span class="kicker">Sections</span>
+<nav><a href="#short" data-go="short"><span class="n" aria-hidden="true"></span><span>In short</span></a><a href="#mic" data-go="mic"><span class="n" aria-hidden="true">01</span><span>Does the app hear me all the time?</span></a><a href="#text" data-go="text"><span class="n" aria-hidden="true">02</span><span>Where do my words go?</span></a><a href="#translate" data-go="translate"><span class="n" aria-hidden="true">03</span><span>Does translation go online?</span></a><a href="#windows" data-go="windows"><span class="n" aria-hidden="true">04</span><span>What does the app know about other apps?</span></a><a href="#stored" data-go="stored"><span class="n" aria-hidden="true">05</span><span>What is on my disk?</span></a><a href="#internet" data-go="internet"><span class="n" aria-hidden="true">06</span><span>When does the app go online?</span></a><a href="#problem" data-go="problem"><span class="n" aria-hidden="true">07</span><span>What if the app breaks?</span></a><a href="#delete" data-go="delete"><span class="n" aria-hidden="true">08</span><span>How do I delete everything?</span></a><a href="#children" data-go="children"><span class="n" aria-hidden="true">09</span><span>Personal data collection</span></a><a href="#rights" data-go="rights"><span class="n" aria-hidden="true">10</span><span>Who is responsible, and what can I do?</span></a><a href="#out" data-go="out"><span class="n" aria-hidden="true">11</span><span>What leaves your computer</span></a></nav>
+<div class="langbox"><details class="lang"><summary><svg class="globe" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.6 2.5 3.9 5.5 3.9 9s-1.3 6.5-3.9 9c-2.6-2.5-3.9-5.5-3.9-9s1.3-6.5 3.9-9z"/></svg><span class="ln" lang="en">English</span><span class="chev" aria-hidden="true"></span></summary><ul><li><a href="ru/" lang="ru" hreflang="ru" data-l="ru" data-offer="Есть на русском →">Русский<span>ru</span></a></li><li><a href="en/" lang="en" hreflang="en" data-l="en" aria-current="page">English<span>en</span></a></li><li><a href="es/" lang="es" hreflang="es" data-l="es" data-offer="En español →">Español<span>es</span></a></li><li><a href="es-ar/" lang="es-AR" hreflang="es-AR" data-l="es-ar" data-offer="En español de Argentina →">Español (Argentina)<span>es-AR</span></a></li><li><a href="uk/" lang="uk" data-l="uk">Українська<span>uk</span></a></li><li><a href="zh/" lang="zh" data-l="zh">中文<span>zh</span></a></li><li><a href="de/" lang="de" data-l="de">Deutsch<span>de</span></a></li><li><a href="fr/" lang="fr" data-l="fr">Français<span>fr</span></a></li><li><a href="pl/" lang="pl" data-l="pl">Polski<span>pl</span></a></li><li><a href="pt/" lang="pt" data-l="pt">Português<span>pt</span></a></li><li><a href="ro/" lang="ro" data-l="ro">Română<span>ro</span></a></li><li><a href="it/" lang="it" data-l="it">Italiano<span>it</span></a></li></ul></details></div>
+</aside>
+<main id="content">
+<p id="offer" class="notice" hidden><a href="#"></a></p>
+<div id="short" class="first" data-sec><h1 tabindex="-1">Kukuluku Voice works without the internet. Speech is recognized and translated right on your computer.</h1><ul class="pills"><li>No account</li><li>No ads</li><li>No tracking</li></ul></div>
+<section id="mic" data-sec><span class="sn" aria-hidden="true">01</span><h2 tabindex="-1">Does the app hear me all the time?</h2>
+<details class="qa"><summary><span>No. Only while you dictate - by default, while you hold Ctrl+Win.</span><span class="tag more">More ›</span><span class="tag less">Less</span></summary><p>The microphone also turns on with F9 (insert by voice) and when you test it. A model on your computer recognizes the sound; the temporary audio file is deleted right away. Recordings are kept only if you turned on «Save audio recordings» (off by default).</p></details>
+</section>
+<section id="text" data-sec><span class="sn" aria-hidden="true">02</span><h2 tabindex="-1">Where do my words go?</h2>
+<details class="qa"><summary><span>Into the window where your cursor is, and into History on your disk.</span><span class="tag more">More ›</span><span class="tag less">Less</span></summary><p>Usually the text goes in through the clipboard, and after 2 seconds the previous text comes back. If Windows clipboard history (Win+V) or clipboard sync is on, Windows may keep a dictation and send it to Microsoft&#x27;s cloud. To turn History off or clear it: «Settings → Privacy».</p></details>
+</section>
+<section id="translate" data-sec><span class="sn" aria-hidden="true">03</span><h2 tabindex="-1">Does translation go online?</h2>
+<details class="qa"><summary><span>No. A model on your computer translates.</span><span class="tag more">More ›</span><span class="tag less">Less</span></summary><p>To take selected text, the app copies it through the clipboard for a moment and puts the clipboard back as it was. Language pairs download once.</p></details>
+</section>
+<section id="windows" data-sec><span class="sn" aria-hidden="true">04</span><h2 tabindex="-1">What does the app know about other apps?</h2>
+<details class="qa"><summary><span>Only the name of the app it types into. The text field - only if you turned on «Notice my corrections».</span><span class="tag more">More ›</span><span class="tag less">Less</span></summary><p>By the name it picks how to insert. «Notice my corrections» is off until you turn it on: then, after a dictation, the app reads the field it typed into to learn your corrections. It doesn&#x27;t read window titles, password fields or other apps&#x27; files.</p></details>
+</section>
+<section id="stored" data-sec><span class="sn" aria-hidden="true">05</span><h2 tabindex="-1">What is on my disk?</h2>
+<details class="qa"><summary><span>History, Dictionary, text snippets, settings and audio recordings if you turned them on - plain files in your Windows profile.</span><span class="tag more">More ›</span><span class="tag less">Less</span></summary><p>History is on from the start; you can turn it off. There are also work logs - they never contain what you dictated. All of it stays on your computer.</p></details>
+</section>
+<section id="internet" data-sec><span class="sn" aria-hidden="true">06</span><h2 tabindex="-1">When does the app go online?</h2>
+<details class="qa"><summary><span>Only to download a speech or translation model.</span><span class="tag more">More ›</span><span class="tag less">Less</span></summary><p>Models live on GitHub, and the app checks that every file arrived whole and unaltered. GitHub sees your computer&#x27;s address and the file name, as with any download; nothing reaches us. If GitHub is unreachable, a Whisper model may download from the backup site Hugging Face - there the app doesn&#x27;t check the file.</p></details>
+</section>
+<section id="problem" data-sec><span class="sn" aria-hidden="true">07</span><h2 tabindex="-1">What if the app breaks?</h2>
+<details class="qa"><summary><span>The app itself sends nothing: an email goes only if you send it.</span><span class="tag more">More ›</span><span class="tag less">Less</span></summary><p>«Report a problem» packs the logs into an archive and opens an email - you attach the archive yourself. Emails are kept for up to 12 months; we read them only to answer you and fix the app. By sending an email, you agree that it is kept in Gmail (USA).</p></details>
+</section>
+<section id="delete" data-sec><span class="sn" aria-hidden="true">08</span><h2 tabindex="-1">How do I delete everything?</h2>
+<details class="qa"><summary><span>Uninstall the app - Windows removes it with History, Dictionary and models (except a models folder you chose yourself).</span><span class="tag more">More ›</span><span class="tag less">Less</span></summary><p>«Settings → Apps → Installed apps → Kukuluku Voice → Uninstall». Delete your own models folder by hand. To clear only History: the app&#x27;s «Settings → Privacy → Clear history».</p></details>
+</section>
+<section id="children" data-sec><span class="sn" aria-hidden="true">09</span><h2 tabindex="-1">Personal data collection</h2>
+<p class="answer">We collect none from anyone, children included: only an email reaches us, if you write one yourself.</p>
+</section>
+<section id="rights" data-sec><span class="sn" aria-hidden="true">10</span><h2 tabindex="-1">Who is responsible, and what can I do?</h2>
+<details class="qa"><summary><span>The Kukuluku developer, Argentina, kukuluku.app@gmail.com.</span><span class="tag more">More ›</span><span class="tag less">Less</span></summary><p>This policy covers the Microsoft Store version. Write to us to find out, correct or delete what we hold about you (in practice, only your emails) - we answer within 10 days. You can complain to your country&#x27;s data protection authority.</p></details>
+</section>
+<section id="out" data-sec><span class="sn" aria-hidden="true">11</span><h2 tabindex="-1">What leaves your computer</h2><ul class="out"><li><b>A model file request</b> → GitHub, when a speech or translation model downloads</li><li><b>Backup for a Whisper model</b> → Hugging Face, only if GitHub is unreachable</li><li><b>App updates</b> → Microsoft Store, like any Store app</li><li><b>A «Report a problem» email</b> → Gmail (Google, USA), only if you send it yourself</li><li class="rest">Everything else - nothing.</li></ul></section>
+<footer class="print-only"><p><time datetime="2026-11-13">Version 2 · 13 November 2026</time></p><p>Questions - <a href="mailto:kukuluku.app@gmail.com">kukuluku.app@gmail.com</a></p></footer>
 </main>
+</div>
+<nav class="cap" aria-label="Sections · Page language">
+<details class="capd cap-sec" name="cap"><summary data-sheet-open="sections"><span class="burger" aria-hidden="true"></span><span class="where" data-now="Sections, now at ">Sections</span></summary>
+<div class="sheet"><span class="kicker">Sections</span><a href="#short" data-go="short"><span class="n" aria-hidden="true"></span><span>In short</span></a><a href="#mic" data-go="mic"><span class="n" aria-hidden="true">01</span><span>Does the app hear me all the time?</span></a><a href="#text" data-go="text"><span class="n" aria-hidden="true">02</span><span>Where do my words go?</span></a><a href="#translate" data-go="translate"><span class="n" aria-hidden="true">03</span><span>Does translation go online?</span></a><a href="#windows" data-go="windows"><span class="n" aria-hidden="true">04</span><span>What does the app know about other apps?</span></a><a href="#stored" data-go="stored"><span class="n" aria-hidden="true">05</span><span>What is on my disk?</span></a><a href="#internet" data-go="internet"><span class="n" aria-hidden="true">06</span><span>When does the app go online?</span></a><a href="#problem" data-go="problem"><span class="n" aria-hidden="true">07</span><span>What if the app breaks?</span></a><a href="#delete" data-go="delete"><span class="n" aria-hidden="true">08</span><span>How do I delete everything?</span></a><a href="#children" data-go="children"><span class="n" aria-hidden="true">09</span><span>Personal data collection</span></a><a href="#rights" data-go="rights"><span class="n" aria-hidden="true">10</span><span>Who is responsible, and what can I do?</span></a><a href="#out" data-go="out"><span class="n" aria-hidden="true">11</span><span>What leaves your computer</span></a></div></details>
+<details class="capd cap-lang" name="cap"><summary data-sheet-open="lang"><svg class="globe" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.6 2.5 3.9 5.5 3.9 9s-1.3 6.5-3.9 9c-2.6-2.5-3.9-5.5-3.9-9s1.3-6.5 3.9-9z"/></svg><span aria-hidden="true">EN</span><span class="sr">Page language: English</span></summary>
+<div class="sheet"><span class="kicker"><svg class="globe" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.6 2.5 3.9 5.5 3.9 9s-1.3 6.5-3.9 9c-2.6-2.5-3.9-5.5-3.9-9s1.3-6.5 3.9-9z"/></svg>Page language</span><ul class="langs"><li><a href="ru/" lang="ru" hreflang="ru" data-l="ru" data-offer="Есть на русском →">Русский<span>ru</span></a></li><li><a href="en/" lang="en" hreflang="en" data-l="en" aria-current="page">English<span>en</span></a></li><li><a href="es/" lang="es" hreflang="es" data-l="es" data-offer="En español →">Español<span>es</span></a></li><li><a href="es-ar/" lang="es-AR" hreflang="es-AR" data-l="es-ar" data-offer="En español de Argentina →">Español (Argentina)<span>es-AR</span></a></li><li><a href="uk/" lang="uk" data-l="uk">Українська<span>uk</span></a></li><li><a href="zh/" lang="zh" data-l="zh">中文<span>zh</span></a></li><li><a href="de/" lang="de" data-l="de">Deutsch<span>de</span></a></li><li><a href="fr/" lang="fr" data-l="fr">Français<span>fr</span></a></li><li><a href="pl/" lang="pl" data-l="pl">Polski<span>pl</span></a></li><li><a href="pt/" lang="pt" data-l="pt">Português<span>pt</span></a></li><li><a href="ro/" lang="ro" data-l="ro">Română<span>ro</span></a></li><li><a href="it/" lang="it" data-l="it">Italiano<span>it</span></a></li></ul></div></details>
+</nav>
 </body>
 </html>
