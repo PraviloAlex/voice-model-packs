@@ -49,10 +49,10 @@
 <details class="qa"><summary><span>いいえ。音声入力中だけです。初期設定では Ctrl+Win を押している間です。</span><span class="tag more">詳しく ›</span><span class="tag less">閉じる</span></summary><p>F9（音声で挿入）を押したときと、マイクをテストするときもマイクがオンになります。音声はパソコン上のモデルが認識し、一時的な音声ファイルはすぐに削除されます。録音が残るのは「Save audio recordings」をオンにした場合だけです（初期設定はオフ）。</p></details>
 </section>
 <section id="text" data-sec><span class="sn" aria-hidden="true">02</span><h2 tabindex="-1">話した内容はどこへ行きますか？</h2>
-<details class="qa"><summary><span>カーソルのあるウィンドウと、ディスク上の履歴（History）に入ります。</span><span class="tag more">詳しく ›</span><span class="tag less">閉じる</span></summary><p>通常、テキストはクリップボード経由で入力され、2 秒後に元の内容が戻ります。Windows のクリップボード履歴（Win+V）やその同期がオンの場合、Windows が音声入力の内容を保存し、Microsoft のクラウドに送ることがあります。履歴のオフ・消去は、アプリの「Settings → Privacy」で行えます。</p></details>
+<details class="qa"><summary><span>カーソルのあるウィンドウと、ディスク上の履歴（History）に入ります。</span><span class="tag more">詳しく ›</span><span class="tag less">閉じる</span></summary><p>通常、テキストはクリップボード経由で入力され、2 秒後に元の内容が戻ります。音声入力した内容は、Windows のクリップボード履歴（Win+V）にもクラウドにも残りません。パスワード管理アプリと同じ印をアプリが付けるためです。履歴のオフ・消去は、アプリの「Settings → Privacy」で行えます。</p></details>
 </section>
 <section id="translate" data-sec><span class="sn" aria-hidden="true">03</span><h2 tabindex="-1">翻訳はインターネットを使いますか？</h2>
-<details class="qa"><summary><span>いいえ。パソコン上のモデルが翻訳します。</span><span class="tag more">詳しく ›</span><span class="tag less">閉じる</span></summary><p>選択したテキストを取得するため、アプリはクリップボード経由で一瞬だけコピーし、すぐに元に戻します。言語ペアのダウンロードは一度だけです。</p></details>
+<details class="qa"><summary><span>いいえ。パソコン上のモデルが翻訳します。</span><span class="tag more">詳しく ›</span><span class="tag less">閉じる</span></summary><p>選択したテキストを取得するため、アプリはクリップボード経由で一瞬だけコピーし、すぐに元に戻します。これは通常のコピーなので、クリップボード履歴（Win+V）がオンなら、Ctrl+C のときと同じく選択した内容が履歴に入ります。言語ペアのダウンロードは一度だけです。</p></details>
 </section>
 <section id="windows" data-sec><span class="sn" aria-hidden="true">04</span><h2 tabindex="-1">アプリはほかのアプリについて何を知っていますか？</h2>
 <details class="qa"><summary><span>テキストを挿入するアプリの名前だけです。入力欄の内容は「Notice my corrections」をオンにした場合だけです。</span><span class="tag more">詳しく ›</span><span class="tag less">閉じる</span></summary><p>名前をもとに挿入方法を選びます。「Notice my corrections」はオンにするまでオフです。オンにすると、音声入力のあとにテキストを挿入した欄を読み取り、修正内容を覚えます。ウィンドウのタイトル、パスワード欄、ほかのアプリのファイルは読み取りません。</p></details>
@@ -61,7 +61,7 @@
 <details class="qa"><summary><span>履歴（History）、辞書（Dictionary）、定型文、設定、オンにした場合は録音。どれも Windows のユーザープロファイル内の普通のファイルです。</span><span class="tag more">詳しく ›</span><span class="tag less">閉じる</span></summary><p>履歴は最初からオンで、オフにできます。動作ログもありますが、音声入力の内容は含まれません。すべてパソコンの中に残ります。</p></details>
 </section>
 <section id="internet" data-sec><span class="sn" aria-hidden="true">06</span><h2 tabindex="-1">アプリはいつインターネットにつながりますか？</h2>
-<details class="qa"><summary><span>音声モデルや翻訳モデルをダウンロードするときだけです。</span><span class="tag more">詳しく ›</span><span class="tag less">閉じる</span></summary><p>モデルは GitHub にあり、アプリは各ファイルが欠けや改ざんなく届いたかを確認します。GitHub には、どのダウンロードとも同じく、パソコンのアドレスとファイル名が見えます。私たちには何も届きません。GitHub に接続できない場合、Whisper モデルが予備サイトの Hugging Face からダウンロードされることがあり、その場合アプリはファイルを確認しません。</p></details>
+<details class="qa"><summary><span>音声モデルや翻訳モデルをダウンロードするときだけです。</span><span class="tag more">詳しく ›</span><span class="tag less">閉じる</span></summary><p>モデルは GitHub にあり、アプリは各ファイルが欠けや改ざんなく届いたかを確認します。GitHub には、どのダウンロードとも同じく、パソコンのアドレスとファイル名が見えます。私たちには何も届きません。</p></details>
 </section>
 <section id="problem" data-sec><span class="sn" aria-hidden="true">07</span><h2 tabindex="-1">アプリが壊れたら？</h2>
 <details class="qa"><summary><span>アプリ自体は何も送信しません。メールは、あなたが送ったときだけ送られます。</span><span class="tag more">詳しく ›</span><span class="tag less">閉じる</span></summary><p>「Report a problem」はログを圧縮ファイルにまとめてメールを開きます。圧縮ファイルはご自身で添付してください。メールは最長 12 か月保存し、返信とアプリの修正のためだけに読みます。メールを送ると、Gmail（米国）に保存されることに同意したことになります。</p></details>
@@ -75,8 +75,8 @@
 <section id="rights" data-sec><span class="sn" aria-hidden="true">10</span><h2 tabindex="-1">責任者は誰？私にできることは？</h2>
 <details class="qa"><summary><span>Kukuluku 開発者（アルゼンチン）、kukuluku.app@gmail.com。</span><span class="tag more">詳しく ›</span><span class="tag less">閉じる</span></summary><p>このポリシーは Microsoft Store 版に適用されます。私たちが持っているあなたの情報（実際にはメールだけ）を確認・訂正・削除したい場合は、メールでご連絡ください。10 日以内に返信します。お住まいの国のデータ保護機関に苦情を申し立てることもできます。</p></details>
 </section>
-<section id="out" data-sec><span class="sn" aria-hidden="true">11</span><h2 tabindex="-1">パソコンから外に出るもの</h2><ul class="out"><li><b>モデルファイルの要求</b> → <span class="w">GitHub</span>, 音声・翻訳モデルのダウンロード時</li><li><b>Whisper モデルの予備の入手先</b> → <span class="w">Hugging Face</span>, GitHub に接続できない場合のみ</li><li><b>アプリの更新</b> → <span class="w">Microsoft Store</span>, Store のほかのアプリと同じ</li><li><b>「Report a problem」のメール</b> → <span class="w">Gmail（Google、米国）</span>, あなたが送った場合のみ</li><li class="rest">アプリはこれ以外に何も送信しません。</li></ul></section>
-<footer class="print-only"><p><time datetime="2026-11-13">バージョン 2 · 2026年11月13日</time></p><p>お問い合わせ：<a href="mailto:kukuluku.app@gmail.com">kukuluku.app@gmail.com</a></p></footer>
+<section id="out" data-sec><span class="sn" aria-hidden="true">11</span><h2 tabindex="-1">パソコンから外に出るもの</h2><ul class="out"><li><b>モデルファイルの要求</b> → <span class="w">GitHub</span>, 音声・翻訳モデルのダウンロード時</li><li><b>アプリの更新</b> → <span class="w">Microsoft Store</span>, Store のほかのアプリと同じ</li><li><b>「Report a problem」のメール</b> → <span class="w">Gmail（Google、米国）</span>, あなたが送った場合のみ</li><li class="rest">アプリはこれ以外に何も送信しません。</li></ul></section>
+<footer class="print-only"><p><time datetime="2026-11-16">バージョン 3 · 2026年11月16日</time></p><p>お問い合わせ：<a href="mailto:kukuluku.app@gmail.com">kukuluku.app@gmail.com</a></p></footer>
 </main>
 </div>
 <nav class="cap" aria-label="目次 · ページの言語">

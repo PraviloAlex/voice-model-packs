@@ -49,10 +49,10 @@
 <details class="qa"><summary><span>不会。只在你听写时：默认是按住 Ctrl+Win 期间。</span><span class="tag more">详细 ›</span><span class="tag less">收起</span></summary><p>按 F9（用语音插入）和测试麦克风时，麦克风也会打开。声音由你电脑上的模型识别，临时音频文件会立即删除。只有你开启了“保存音频录音”（默认关闭），录音才会保留。</p></details>
 </section>
 <section id="text" data-sec><span class="sn" aria-hidden="true">02</span><h2 tabindex="-1">我说的话去哪儿了？</h2>
-<details class="qa"><summary><span>进入光标所在的窗口，以及你磁盘上的历史记录。</span><span class="tag more">详细 ›</span><span class="tag less">收起</span></summary><p>文本通常通过剪贴板插入，2 秒后剪贴板恢复原来的内容。如果 Windows 开启了剪贴板历史（Win+V）或其同步，Windows 可能会保存听写内容并发送到 Microsoft 云。关闭或清除历史：在程序中打开“设置 → 隐私”。</p></details>
+<details class="qa"><summary><span>进入光标所在的窗口，以及你磁盘上的历史记录。</span><span class="tag more">详细 ›</span><span class="tag less">收起</span></summary><p>文本通常通过剪贴板插入，2 秒后剪贴板恢复原来的内容。听写的文本不会进入 Windows 剪贴板历史（Win+V），也不会上传到云：程序会像密码管理器那样给它加上标记。关闭或清除历史：在程序中打开“设置 → 隐私”。</p></details>
 </section>
 <section id="translate" data-sec><span class="sn" aria-hidden="true">03</span><h2 tabindex="-1">翻译会上网吗？</h2>
-<details class="qa"><summary><span>不会。由电脑上的模型翻译。</span><span class="tag more">详细 ›</span><span class="tag less">收起</span></summary><p>为了获取选中的文本，程序会通过剪贴板瞬间复制它，并立即把剪贴板恢复原样。语言对只需下载一次。</p></details>
+<details class="qa"><summary><span>不会。由电脑上的模型翻译。</span><span class="tag more">详细 ›</span><span class="tag less">收起</span></summary><p>为了获取选中的文本，程序会通过剪贴板瞬间复制它，并立即把剪贴板恢复原样。这是普通的复制：如果开启了剪贴板历史（Win+V），选中的文本会像按 Ctrl+C 后一样出现在那里。语言对只需下载一次。</p></details>
 </section>
 <section id="windows" data-sec><span class="sn" aria-hidden="true">04</span><h2 tabindex="-1">程序对其他程序了解什么？</h2>
 <details class="qa"><summary><span>只知道插入文本的程序名称。文本框的内容：仅当你开启了“留意我的更正”。</span><span class="tag more">详细 ›</span><span class="tag less">收起</span></summary><p>程序根据名称选择插入方式。“留意我的更正”默认关闭；开启后，程序会在听写后读取插入文本的字段，以记住你的更正。它不会读取窗口标题、密码框和其他程序的文件。</p></details>
@@ -61,7 +61,7 @@
 <details class="qa"><summary><span>历史记录、词典、文本片段、设置，以及你开启后的音频录音：都是你 Windows 用户目录里的普通文件。</span><span class="tag more">详细 ›</span><span class="tag less">收起</span></summary><p>历史记录默认开启，可以关闭。还有运行日志，其中不含你听写的内容。这些都留在你的电脑上。</p></details>
 </section>
 <section id="internet" data-sec><span class="sn" aria-hidden="true">06</span><h2 tabindex="-1">程序什么时候联网？</h2>
-<details class="qa"><summary><span>只在下载语音或翻译模型时。</span><span class="tag more">详细 ›</span><span class="tag less">收起</span></summary><p>模型存放在 GitHub 上，程序会检查每个文件是否完整、未被篡改。GitHub 能看到你电脑的地址和文件名，和任何下载一样；我们收不到任何东西。如果 GitHub 无法访问，Whisper 模型可能从备用网站 Hugging Face 下载，那里的文件程序不做检查。</p></details>
+<details class="qa"><summary><span>只在下载语音或翻译模型时。</span><span class="tag more">详细 ›</span><span class="tag less">收起</span></summary><p>模型存放在 GitHub 上，程序会检查每个文件是否完整、未被篡改。GitHub 能看到你电脑的地址和文件名，和任何下载一样；我们收不到任何东西。</p></details>
 </section>
 <section id="problem" data-sec><span class="sn" aria-hidden="true">07</span><h2 tabindex="-1">程序出问题怎么办？</h2>
 <details class="qa"><summary><span>程序本身不发送任何东西：只有你自己发送，邮件才会发出。</span><span class="tag more">详细 ›</span><span class="tag less">收起</span></summary><p>“报告问题”会把日志打包成压缩文件并打开一封邮件，压缩文件由你自己附上。邮件最多保存 12 个月；我们阅读邮件只为回复你和修复程序。发送邮件即表示你同意邮件保存在 Gmail（美国）。</p></details>
@@ -75,8 +75,8 @@
 <section id="rights" data-sec><span class="sn" aria-hidden="true">10</span><h2 tabindex="-1">谁负责？我能做什么？</h2>
 <details class="qa"><summary><span>Kukuluku 开发者，阿根廷，kukuluku.app@gmail.com。</span><span class="tag more">详细 ›</span><span class="tag less">收起</span></summary><p>本政策适用于 Microsoft Store 版本。写信给我们，即可了解、更正或删除我们掌握的关于你的信息（实际上只有你的邮件），我们会在 10 天内答复。你可以向本国的数据保护机构投诉。</p></details>
 </section>
-<section id="out" data-sec><span class="sn" aria-hidden="true">11</span><h2 tabindex="-1">哪些内容会离开你的电脑</h2><ul class="out"><li><b>模型文件请求</b> → <span class="w">GitHub</span>, 下载语音或翻译模型时</li><li><b>Whisper 模型的备用来源</b> → <span class="w">Hugging Face</span>, 仅当 GitHub 无法访问时</li><li><b>程序更新</b> → <span class="w">Microsoft Store</span>, 与任何 Store 应用相同</li><li><b>“报告问题”邮件</b> → <span class="w">Gmail（Google，美国）</span>, 仅当你自己发送时</li><li class="rest">程序不会发送其他任何内容。</li></ul></section>
-<footer class="print-only"><p><time datetime="2026-11-13">版本 2 · 2026年11月13日</time></p><p>问题：<a href="mailto:kukuluku.app@gmail.com">kukuluku.app@gmail.com</a></p></footer>
+<section id="out" data-sec><span class="sn" aria-hidden="true">11</span><h2 tabindex="-1">哪些内容会离开你的电脑</h2><ul class="out"><li><b>模型文件请求</b> → <span class="w">GitHub</span>, 下载语音或翻译模型时</li><li><b>程序更新</b> → <span class="w">Microsoft Store</span>, 与任何 Store 应用相同</li><li><b>“报告问题”邮件</b> → <span class="w">Gmail（Google，美国）</span>, 仅当你自己发送时</li><li class="rest">程序不会发送其他任何内容。</li></ul></section>
+<footer class="print-only"><p><time datetime="2026-11-16">版本 3 · 2026年11月16日</time></p><p>问题：<a href="mailto:kukuluku.app@gmail.com">kukuluku.app@gmail.com</a></p></footer>
 </main>
 </div>
 <nav class="cap" aria-label="章节 · 页面语言">
